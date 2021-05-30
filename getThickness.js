@@ -1,6 +1,6 @@
 
 
-		const Url = 'http://165.22.100.242:8000/positions';
+		const Url = 'http://xxx.xxx.xxx.xxx:8000/positions';
 		var curLen=0;
 
 		function thickness() {
