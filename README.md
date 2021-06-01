@@ -7,4 +7,5 @@ Edit IP and port of Url in getThickness.js in case of changing server
 
 GCrobot side
 - It creates randomly fake values of thickness and updates values every 5 seconds.
-- Data is limited to 1000 rows (0-999) then reset to 0.
+- Data is limited to 1000 rows (0-999) then stop holding value at 999. You may have to click "delete all" button to start again.
+
