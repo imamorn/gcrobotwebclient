@@ -1,16 +1,16 @@
+const Url = 'http://165.22.100.242:8000';
 
-
-		const Url = 'http://localhost:xxxx/positions';
 		var curLen=0;
 
 		function thickness() {
-
+			
 			// GET Method 
-			axios.get(Url)
+			axios.get(Url+'/positions')
   		.then(response => {
     		console.log("response: ", response)
     		// do something about response
 				// json to update table
+					
 					// Add name to row
 				  var x = document.getElementById("myTable").rows[1].cells;
   				x[1].innerHTML = JSON.stringify(response.data[0].positions[0].name);
@@ -27,10 +27,9 @@
 					
 					if (curLen<newLen){
 						var start = curLen;
-						if(curLen==0) start++;
 
 						for (i=start;i<newLen;i++){
-							var row = table.insertRow(i+1);
+							var row = table.insertRow(i+2);
 							var cell0 = row.insertCell(0);
   						var cell1 = row.insertCell(1);
   						var cell2 = row.insertCell(2);
@@ -53,14 +52,37 @@
 						}
 					}
 
+					if(curLen>newLen)window.location.reload(true); //refresh page
+
 					// Update json data len
 					curLen = newLen;
+
 
   		})
   		.catch(err => {
     		console.error(err)
-				alert("No connection to GCrobot");
+			  alert("No connection to GCrobot or Data Not Available");
+				window.location.reload(true); //refresh page
+
   		})
 
 		}
 
+	function deleteALL(){
+			// GET Method 
+			axios.get(Url+'/delete')
+  		.then(response => { 
+    		console.log("response: ", response);
+				window.location.reload(true); //refresh page
+				curLen=0; // reset
+
+  		})
+  		.catch(err => {
+    		console.error(err)
+			  alert("Error delete");
+				
+
+  		})
+
+
+		}
