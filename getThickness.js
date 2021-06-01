@@ -1,6 +1,6 @@
 
 
-		const Url = 'http://xxx.xxx.xxx.xxx:xxxx/positions';
+		const Url = 'http://localhost:xxxx/positions';
 		var curLen=0;
 
 		function thickness() {
