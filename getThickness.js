@@ -42,7 +42,7 @@ function thickness() {
   				var cell7 = row.insertCell(7);
   				var cell8 = row.insertCell(8);
 				// Add thickness to row
-				cell0.innerHTML = i;
+				cell0.innerHTML = JSON.stringify(response.data[i].timestamp);;
   				cell1.innerHTML = JSON.stringify(response.data[i].positions[0].thickness);
   				cell2.innerHTML = JSON.stringify(response.data[i].positions[1].thickness);
 				cell3.innerHTML = JSON.stringify(response.data[i].positions[2].thickness);
